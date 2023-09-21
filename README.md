@@ -13,7 +13,7 @@ Map all nearby wifi devices, their zone coverage and best estimate physical loca
 - **macOS** (airport tool to scan networks & shortcuts tool to get location)
 - Download & install `getCoreLocationData` custom Apple Shortcut (https://www.icloud.com/shortcuts/0a02baf1db104091bf0fa5d328c93d8f)
 
-> [!NOTE]\ 
+> [!NOTE]\
 > Apple Shortcuts are custom snippets that can tap into low level OS APIs. In macOS the CoreLocation API allows us to get GPS data while offline and reverse geocode GPS coordinates.
 
 ### Usage
