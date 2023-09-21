@@ -13,8 +13,8 @@ Map all nearby wifi devices, their zone coverage and best estimate physical loca
 - **macOS** (airport tool to scan networks & shortcuts tool to get location)
 - Download & install `getCoreLocationData` custom Apple Shortcut (https://www.icloud.com/shortcuts/0a02baf1db104091bf0fa5d328c93d8f)
 
-> [!NOTE] Apple Shortcuts
-> Shortcuts are custom snippets that can tap into low level OS APIs. In macOS the CoreLocation API allows us to get GPS data while offline and reverse geocode GPS coordinates.
+> [!NOTE]\ 
+> Apple Shortcuts are custom snippets that can tap into low level OS APIs. In macOS the CoreLocation API allows us to get GPS data while offline and reverse geocode GPS coordinates.
 
 ### Usage
 Clone this repo and execute with sudo.
@@ -22,8 +22,8 @@ Clone this repo and execute with sudo.
 sudo ./main.sh
 ```
 
-> [!IMPORTANT] Why sudo?
-> macOS limit network scanning data capabilities by default.  sudo is necessary to retrieve network devices' BSSID for identification purposes.
+> [!IMPORTANT]\
+> Why sudo? macOS limit network scanning data capabilities by default.  sudo is necessary to retrieve network devices' BSSID for identification purposes.
 
 This command just glue everything together and output 2 files. 
 1. `./scans/{time}.networks.csv` 
