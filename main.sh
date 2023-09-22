@@ -1,8 +1,7 @@
 #!/bin/zsh
-
 # Main script to get network data out of airport service 
 # and get location data out of CoreLocation service using the shortcut CLI tool
-echo "$(date)"
+echo "$(date) running FindMyWifi service"
 mkdir -p scans
 TIMESTAMP=$(date -u +%s)
 OUTPUT_NETWORKS_FILE="scans/$TIMESTAMP.networks.csv"
@@ -16,4 +15,4 @@ touch $OUTPUT_LOCATION_FILE
 
 # Get location data using shortcut CLI tool
 # /!\ Wi-fi service should be up even if it's offline
-shortcuts run getCoreLocationData | TS=$TIMESTAMP python timestamp_add.py | json_pp -json_opt utf8,pretty > $OUTPUT_LOCATION_FILE
+shortcuts run getCoreLocationData | TS=$TIMESTAMP python3 timestamp_add.py | json_pp -json_opt utf8,pretty > $OUTPUT_LOCATION_FILE
