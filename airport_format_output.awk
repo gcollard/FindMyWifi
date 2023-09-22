@@ -5,12 +5,13 @@ BEGIN {
 NR>1 { 
     match($0, /[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}/)
     bssid = substr($0, RSTART, RLENGTH)
+    BSSIDREND = RSTART + RLENGTH + 1
     SSIDREND = RSTART-2
     BSSIDRLENGTH = RLENGTH
 
     ssid = substr($0, 0, SSIDREND)
     gsub(/^[ \t]+/, "", ssid)
-    $0 = substr($0, SSIDREND + BSSIDRLENGTH)
+    $0 = substr($0, BSSIDREND)
     
     match($0, /-?[0-9]+/)
     rssi = substr($0, RSTART, RLENGTH)
