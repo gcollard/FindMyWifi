@@ -10,14 +10,19 @@ Map all nearby wifi devices, their zone coverage and best estimate physical loca
 - Scan nearby wifi networks
 - Get your GPS location
 ### Requirements
-- **macOS** (airport tool to scan networks & shortcuts tool to get location)
-- Download & install `getCoreLocationData` custom Apple Shortcut (https://www.icloud.com/shortcuts/0a02baf1db104091bf0fa5d328c93d8f)
+- **macOS** (airport tool to scan networks & Shortcuts tool to get location)
 
 > [!NOTE]\
 > Apple Shortcuts are custom snippets that can tap into low level OS APIs. In macOS the CoreLocation API allows us to get GPS data while offline and reverse geocode GPS coordinates.
 
-### Usage
-Clone this repo and execute with sudo.
+### Installation
+Clone this repo, run the makefile and click "Add Shortcut" when asked by the OS dialog box.
+```bash
+make build
+```
+
+### Usage  
+
 ```bash
 sudo ./main.sh
 ```
