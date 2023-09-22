@@ -38,8 +38,8 @@ while true; do
     elif (( $shortcuts_result == 255))
     then
         # Probably API Rate limit exceeded, try increasing sleep time
-        let "COUNTER_ERROR = $COUNTER_ERROR + 1"
-        let "ERROR_RATE = $COUNTER_ERROR / $COUNTER * 100"
+        COUNTER_ERROR=$((COUNTER_ERROR+1))
+        ERROR_RATE=$((COUNTER_ERROR/COUNTER*100))
         rm $OUTPUT_NETWORKS_FILE
         rm $OUTPUT_LOCATION_FILE
         echo "\033[1;31m[Error]\033[0m $(date) ${ERROR_RATE}% Error rate (${COUNTER_ERROR} err / ${COUNTER} try). If this number gets too high, consider increasing sleep time " >&2
@@ -47,8 +47,8 @@ while true; do
         sleep ${SLEEP_ERROR}
     else
         # other errors
-        let "COUNTER_ERROR = $COUNTER_ERROR + 1"
-        let "ERROR_RATE = $COUNTER_ERROR / $COUNTER * 100"
+        COUNTER_ERROR=$((COUNTER_ERROR+1))
+        ERROR_RATE=$((COUNTER_ERROR/COUNTER*100))
         rm $OUTPUT_NETWORKS_FILE
         rm $OUTPUT_LOCATION_FILE
         echo "\033[1;31m[Error]\033[0m $(date) Unexpected error, restarting in ${SLEEP_ERROR_MINUTES}min" >&2
