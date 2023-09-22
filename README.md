@@ -24,7 +24,7 @@ make build
 ### Usage  
 
 ```bash
-sudo ./main.sh
+sudo make run  # will run every 2 minutes until stopped
 ```
 
 > [!IMPORTANT]\
@@ -82,7 +82,7 @@ Network data is collected using the airport CLI tool which returns the following
 ### Roadmap
 - [x] Scan Nearby Wifi Networks
 - [x] Associate GPS data to Network scans
-- [ ] cronjob setup.
+- [x] Run every 2 minutes until stopped
 - [ ] Pinpoint devices physical location over the map (highest RSSI or triangulation).
 - [ ] Draw network coverage zones over the map.
 - [ ] Add postgis
