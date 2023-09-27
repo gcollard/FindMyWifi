@@ -9,6 +9,5 @@ import sys
 import json
 
 data = json.loads(sys.stdin.read())
-ts = os.environ["TS"]
-data.update({"timestamp": ts})
+data.update({"timestamp": os.environ["TS"]})
 sys.stdout.write(json.dumps(data))
